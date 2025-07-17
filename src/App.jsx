@@ -33,6 +33,10 @@ function App() {
         fontFamily: "'Montserrat', sans-serif",
         overflow: 'hidden',
         }}>
+            <div style={{ position: 'absolute', bottom: 16, display: 'flex', gap: 8 }}>
+                <button onClick={prev} style={{ padding: '8px 16px', borderRadius: 24, border: 'none', opacity: 0.8, cursor: 'pointer', fontSize: 14 }}>Назад</button>
+                <button onClick={next} style={{ padding: '8px 16px', borderRadius: 24, border: 'none', opacity: 0.8, cursor: 'pointer', fontSize: 14 }}>Вперед</button>
+            </div>
             <AnimatePresence>
                 <motion.div
                     key={slides[index].id}
@@ -63,11 +67,6 @@ function App() {
                     {slides[index].text && <p style={{ fontSize: 14, margin: '4px 0' }}>{slides[index].text}</p>}
                 </motion.div>
             </AnimatePresence>
-
-            <div style={{ position: 'absolute', bottom: 16, display: 'flex', gap: 8 }}>
-                <button onClick={prev} style={{ padding: '8px 16px', borderRadius: 24, border: 'none', opacity: 0.8, cursor: 'pointer', fontSize: 14 }}>Назад</button>
-                <button onClick={next} style={{ padding: '8px 16px', borderRadius: 24, border: 'none', opacity: 0.8, cursor: 'pointer', fontSize: 14 }}>Вперед</button>
-            </div>
         </div>
     );
 }
